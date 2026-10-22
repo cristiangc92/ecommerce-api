@@ -4,6 +4,8 @@ import dotenv from "dotenv"
 import { sequelize, connectDB } from "./config/db.js"
 import "./models/index.js"
 import authRoutes from './routes/auth.routes.js';
+import productRoutes from './routes/productRoutes.js';
+import orderRoutes from './routes/orderRoutes.js';
 
 dotenv.config()
 
@@ -13,7 +15,9 @@ const PORT = process.env.PORT || 3001
 app.use(cors())
 app.use(express.json())
 
-app.use('/api/auth', authRoutes);
+app.use("/api/auth", authRoutes)
+app.use("/api/products", productRoutes)
+app.use("/api/orders", orderRoutes)
 
 app.get("/api/prueba", (req, res) => {
     res.json({ status: "ok", message: "API E-commerce funcionando correctamente" })
