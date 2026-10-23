@@ -4,8 +4,8 @@ import dotenv from "dotenv"
 import { sequelize, connectDB } from "./config/db.js"
 import "./models/index.js"
 import authRoutes from './routes/auth.routes.js';
-import productRoutes from './routes/productRoutes.js';
-import orderRoutes from './routes/orderRoutes.js';
+import productRoutes from './routes/product.routes.js';
+import orderRoutes from './routes/order.routes.js';
 
 dotenv.config()
 
